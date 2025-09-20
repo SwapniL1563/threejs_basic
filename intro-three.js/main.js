@@ -11,7 +11,6 @@ const cube = new THREE.Mesh(geometry,material);
 scene.add(cube); // add to scene
 
 //  add camera
-
 const size = {
     width: window.innerWidth,
     height:window.innerHeight
