@@ -9,7 +9,8 @@ const scene = new THREE.Scene();
 
 // creating an object
 const geometry = new THREE.BoxGeometry(1,1,1,3,3,3); 
-const material = new THREE.MeshBasicMaterial({ color: "#fffafa" , wireframe:true})
+// const material = new THREE.MeshBasicMaterial({ color: "#fffafa" , wireframe:true})
+const material = new THREE.MeshNormalMaterial();
 const cube = new THREE.Mesh(geometry,material);
 scene.add(cube);
 
@@ -24,18 +25,18 @@ camera.lookAt(cube.position);
 scene.add(camera);
 
 // stars effect using bufferGeometry
-// const starsGeometry = new THREE.BufferGeometry();
-// const starCount = 500;
+const starsGeometry = new THREE.BufferGeometry();
+const starCount = 500;
 
-// const positions = new Float32Array(starCount * 3);
-// for (let i = 0; i < starCount * 3; i++) {
-//   positions[i] = (Math.random() - 0.5) * 120;
-// }
-// starsGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 4));
+const positions = new Float32Array(starCount * 3);
+for (let i = 0; i < starCount * 3; i++) {
+  positions[i] = (Math.random() - 0.5) * 120;
+}
+starsGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 4));
 
-// const starsMaterial = new THREE.PointsMaterial({ color: 0xffffff });
-// const stars = new THREE.Points(starsGeometry, starsMaterial);
-// scene.add(stars);
+const starsMaterial = new THREE.PointsMaterial({ color: 0xffffff });
+const stars = new THREE.Points(starsGeometry, starsMaterial);
+scene.add(stars);
 
 
 // handling resize
