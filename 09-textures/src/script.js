@@ -50,12 +50,12 @@ colorImg.center.x = 0.5;
 colorImg.center.y = 0.5;
 
 // How it works in JS
-// const image = new Image();
-// const texture = new THREE.Texture(image);
-// image.addEventListener("load", () => {
-//     texture.needsUpdate = true;
-// });
-// image.src = "/textures/door/color.jpg";
+const image = new Image();
+const texture = new THREE.Texture(image);
+image.addEventListener("load", () => {
+    texture.needsUpdate = true;
+});
+image.src = "/textures/door/color.jpg";
 /**
  * Object
  */
